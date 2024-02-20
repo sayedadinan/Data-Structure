@@ -105,7 +105,7 @@ class Binary {
   }
 
   removehelper(int data, Node? current, Node? parent) {
-    Node? current = root;
+    // Node? current = root;
     while (current != null) {
       if (data < current.data!) {
         parent = current;
@@ -140,6 +140,7 @@ class Binary {
               }
             }
           }
+          break;
         }
       }
     }
@@ -159,5 +160,6 @@ void main() {
   binary.insert(34);
   binary.insert(24);
   binary.insert(14);
+  binary.remove(24);
   print(binary.search(24));
 }

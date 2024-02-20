@@ -7,8 +7,13 @@ class Node {
 void main() {
   Binary value = Binary();
   value.insert(10);
+  value.insert(18);
+  value.insert(40);
+  value.insert(8);
+  value.insert(77);
   value.remove(13);
-  print(value.search(10));
+  print(value.search(18));
+  // print(value.closest(9));
   // value.printTree(value.root);
   // value.inOrder();
   // print('inorder finish');
@@ -116,13 +121,10 @@ class Binary {
   }
 
   preOrders(Node? node) {
-    // Update parameter to accept null nodes
     if (node != null) {
       print(node.data);
-      preOrders(
-          node.left); // Check if left child is not null before accessing it
-      preOrders(
-          node.right); // Check if right child is not null before accessing it
+      preOrders(node.left);
+      preOrders(node.right);
     }
   }
 
@@ -135,12 +137,9 @@ class Binary {
   }
 
   postOrders(Node? node) {
-    // Update parameter to accept null nodes
     if (node != null) {
-      postOrders(
-          node.left); // Check if left child is not null before accessing it
-      postOrders(
-          node.right); // Check if right child is not null before accessing it
+      postOrders(node.left);
+      postOrders(node.right);
       print(node.data);
     }
   }
@@ -155,8 +154,7 @@ class Binary {
   inOrders(Node? node) {
     // Update parameter to accept null nodes
     if (node != null) {
-      inOrders(
-          node.left); // Check if left child is not null before accessing it
+      inOrders(node.left);
       if (node.data != null) {
         print(node.data);
       }
@@ -203,6 +201,29 @@ class Binary {
         }
       }
     }
+  }
+
+  closest(int target) {
+    Node? current = root;
+    if (current == null) {
+      // Handle the case when the tree is empty
+      throw Exception("Tree is empty");
+    }
+
+    int closest = current.data!;
+    while (current != null) {
+      if ((target - closest).abs() > (target - current.data!)) {
+        closest = current.data!;
+      }
+      if (target < current.data!) {
+        current = current.left;
+      } else if (target > current.data!) {
+        current = current.right;
+      } else {
+        break;
+      }
+    }
+    return closest;
   }
 
   void printTree(Node? node) {
