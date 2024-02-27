@@ -1,5 +1,5 @@
 class HashTable {
-  List<List<int>> table; // Marking 'table' as 'late'
+  List<List<int>> table;
   late int size;
 
   HashTable(int size) : table = List.generate(size, (index) => []) {
@@ -40,9 +40,9 @@ void main() {
   hashtable.insert("banana", 2);
   hashtable.insert("orange", 3);
 
-  print(hashtable.search("apple")); // Output: [1]
-  print(hashtable.search("banana")); // Output: [2]
-  print(hashtable.search(2)); // Output: [3]
+  print(hashtable.search("apple"));
+  print(hashtable.search("banana"));
+  print(hashtable.search(2));
 
   hashtable.remove("apple", 1);
   print(hashtable.search("apple"));

@@ -651,23 +651,23 @@
 //     }
 //   }
 
-//   closestval(int target) {
-//     Bnode? current = root;
-//     int closest = current!.data!;
-//     while (current != null) {
-//       if ((closest - target).abs() > (target - current.data!)) {
-//         closest = current.data!;
-//       }
-//       if (target < current.data!) {
-//         current = current.left;
-//       } else if (target > current.data!) {
-//         current = current.right;
-//       } else {
-//         break;
-//       }
+// closestval(int target) {
+//   Bnode? current = root;
+//   int closest = current!.data!;
+//   while (current != null) {
+//     if ((closest - target).abs() > (target - current.data!)) {
+//       closest = current.data!;
 //     }
-//     return closest;
+//     if (target < current.data!) {
+//       current = current.left;
+//     } else if (target > current.data!) {
+//       current = current.right;
+//     } else {
+//       break;
+//     }
 //   }
+//   return closest;
+// }
 
 //   bstornot() {
 //     int k = 0;
@@ -694,6 +694,8 @@
 //     }
 //   }
 // }
+
+import 'dart:math';
 
 class Binarysnode {
   Binarysnode? left, right;
@@ -768,7 +770,6 @@ class Binaryserch {
 class Person {
   int id;
   String name;
-
   Person(this.id, this.name);
 }
 
@@ -808,6 +809,16 @@ class BinarySearchTree {
       print("ID: ${node.person.id}, Name: ${node.person.name}");
       inorderTraversal(node.right);
     }
+  }
+
+  height(TreeNode? root) {
+    if (root == null) {
+      return 0;
+    }
+    int leftheight = height(root.left);
+    int rightheight = height(root.right);
+    int myheight = max(leftheight, rightheight);
+    return myheight;
   }
 }
 

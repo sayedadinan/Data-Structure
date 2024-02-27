@@ -64,5 +64,5 @@ void main() {
   value.insert('adsan');
   value.insert('ajman');
   value.insert('jasir');
-  print(value.prefixsearch('j'));
+  print(value.prefixsearch('a'));
 }

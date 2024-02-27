@@ -49,7 +49,6 @@ class Heap {
     swapingfun(heap, i, heap.length - 1);
     heap.removeLast();
     if (i < heap.length) {
-      // If the removed element was not the last one, fix the heap
       shiftdown(i);
       shiftUp(i);
     }
