@@ -37,6 +37,14 @@ class Recursions {
       return s;
     }
   }
+
+  displaywithrec(temp) {
+    if (temp == null) {
+      print('empty');
+    } else {
+      displaywithrec(temp = temp.next);
+    }
+  }
 }
 
 void main() {

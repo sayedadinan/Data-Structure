@@ -1,17 +1,4 @@
 class Sort {
-  insertionsort(List<int> store) {
-    for (int i = 1; i < store.length; i++) {
-      int current = store[i];
-      int j = i - 1;
-      while (j >= 0 && store[j] > current) {
-        store[j + 1] = store[j];
-        j--;
-      }
-      store[j + 1] = current;
-    }
-    return store;
-  }
-
   insertionsorts(List<int> datas) {
     for (int i = 1; i < datas.length; i++) {
       int current = datas[i];
