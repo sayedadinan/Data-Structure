@@ -38,6 +38,34 @@ class Recursions {
     }
   }
 
+  void printEven(int n) {
+    if (n == 0) {
+      return;
+    } else {
+      if (n % 2 == 0) {
+        print(n);
+      }
+      printEven(n - 1);
+    }
+  }
+
+  void countDown(int n) {
+    if (n == 0) {
+      print("Blastoff!");
+    } else {
+      print(n);
+      countDown(n - 1);
+    }
+  }
+
+  int factorial(int n) {
+    if (n == 0 || n == 1) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  }
+
   displaywithrec(temp) {
     if (temp == null) {
       print('empty');
