@@ -32,60 +32,6 @@ class Binary {
     }
   }
 
-  // void insert(int val) {
-  //   Node newNode = Node(val);
-
-  //   if (root == null) {
-  //     root = newNode; // Update root if the tree is empty
-  //     return;
-  //   }
-
-  //   Node? current = root;
-
-  //   while (true) {
-  //     if (val < current!.data!) {
-  //       if (current.left == null) {
-  //         current.left = newNode;
-  //         break;
-  //       } else {
-  //         current = current.left;
-  //       }
-  //     } else {
-  //       if (current.right == null) {
-  //         current.right = newNode;
-  //         break;
-  //       } else {
-  //         current = current.right;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // insersts(int val) {
-  //   Node? newval = Node(val);
-  //   Node? current = root;
-  //   if (current == null) {
-  //     current = newval;
-  //   }
-  //   while (true) {
-  //     if (newval.data! < current!.data!) {
-  //       if (current.left == null) {
-  //         current.left = newval;
-  //         break;
-  //       } else {
-  //         current = current.left;
-  //       }
-  //     } else {
-  //       if (current.right == null) {
-  //         current.right = newval;
-  //         break;
-  //       } else {
-  //         current = current.right;
-  //       }
-  //     }
-  //   }
-  // }
-
   search(int val) {
     Node? current = root;
     while (current != null) {

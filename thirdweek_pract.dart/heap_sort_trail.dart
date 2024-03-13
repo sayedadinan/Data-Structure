@@ -1,4 +1,4 @@
-import '../3rdweek/heaps/heap_sort_pract.dart';
+import '../Third week/heaps/heap_sort_pract.dart';
 
 class Heap {
   // List<int> store = [];
